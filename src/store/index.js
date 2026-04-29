@@ -1,23 +1,21 @@
-import {createStore, createSlice, configureStore} from '@reduxjs/toolkit';
+import { createStore, createSlice, configureStore } from '@reduxjs/toolkit';
 
 const songsSlice = createSlice({
-    name: 'song',
-    initialState: [],
-    reducers: {
-      addSongs(state, action){
-        state.push(action.payload);
-      },
+	name: 'song',
+	initialState: [],
+	reducers: {
+		addSongs(state, action) {
+			state.push(action.payload);
+		},
 
-      removeSons(state, action) {
-
-      } 
-    }
+		removeSongs(state, action) {}
+	}
 });
 
 const store = configureStore({
-    reducer: {
-        songs: songsSlice.reducer
-    }
+	reducer: {
+		songs: songsSlice.reducer
+	}
 });
 
-console.log('store => ', store);
+export { store }

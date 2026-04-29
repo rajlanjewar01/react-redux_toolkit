@@ -53,3 +53,10 @@ Connecting React to Redux:
 
 <img width="909" height="654" alt="image" src="https://github.com/user-attachments/assets/ee74f05b-e152-449d-8dcb-66df0b0a23cd" />
 
+
+Changing a state:
+
+<img width="948" height="762" alt="image" src="https://github.com/user-attachments/assets/1ee6a884-9c23-41e2-9dbb-78b3e78c2786" />
+<img width="874" height="129" alt="image" src="https://github.com/user-attachments/assets/69f45c85-dd3f-4dd7-a21c-6a945b863582" />
+
+

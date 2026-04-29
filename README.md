@@ -1,4 +1,42 @@
 Redux store:
+
+`store/index.js`
+
+```
+import { createStore, createSlice, configureStore } from '@reduxjs/toolkit';
+
+const songsSlice = createSlice({
+	name: 'song',
+	initialState: [],
+	reducers: {
+		addSongs(state, action) {
+			state.push(action.payload);
+		},
+
+		removeSongs(state, action) {}
+	}
+});
+
+const store = configureStore({
+	reducer: {
+		songs: songsSlice.reducer
+	}
+});
+
+const startingState = store.getState();
+console.log('initial store => ', JSON.stringify(startingState));
+
+store.dispatch({
+	type: 'song/addSongs',
+	payload: 'Closer - Chainsmoker'
+});
+
+const finalState = store.getState();
+console.log('song store => ', JSON.stringify(finalState));
+
+```
+
+
 <img width="1199" height="717" alt="image" src="https://github.com/user-attachments/assets/7e18f258-3ee2-4785-8e8c-33b4d1afb067" />
 
 Slice: 
@@ -10,3 +48,8 @@ step 1:
 
 step 3: action creator functions - 
 <img width="1333" height="613" alt="image" src="https://github.com/user-attachments/assets/75b56510-849c-455c-a401-c80d28904181" />
+
+Connecting React to Redux:
+
+<img width="909" height="654" alt="image" src="https://github.com/user-attachments/assets/ee74f05b-e152-449d-8dcb-66df0b0a23cd" />
+

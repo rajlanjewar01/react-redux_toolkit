@@ -161,3 +161,14 @@ function SongPlaylist() {
     return state.songs;
   });
 ```
+
+**Files and folder structure:**
+
+organize by **function**:
+<img width="917" height="651" alt="image" src="https://github.com/user-attachments/assets/deca8bea-10b4-4d41-a74a-759a508d981e" />
+
+organize by **feature**:
+<img width="1114" height="725" alt="image" src="https://github.com/user-attachments/assets/43c57f43-629f-4039-bdd3-17a920eb1d2a" />
+
+recommendations: 
+<img width="848" height="625" alt="image" src="https://github.com/user-attachments/assets/36fba7aa-27b2-4ac4-995a-8f0a84e87368" />

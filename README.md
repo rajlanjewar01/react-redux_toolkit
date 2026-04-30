@@ -53,3 +53,89 @@ Connecting React to Redux:
 
 <img width="909" height="654" alt="image" src="https://github.com/user-attachments/assets/ee74f05b-e152-449d-8dcb-66df0b0a23cd" />
 
+
+Changing a state:
+
+<img width="948" height="762" alt="image" src="https://github.com/user-attachments/assets/1ee6a884-9c23-41e2-9dbb-78b3e78c2786" />
+<img width="874" height="129" alt="image" src="https://github.com/user-attachments/assets/69f45c85-dd3f-4dd7-a21c-6a945b863582" />
+
+
+**Step 1: Add reducers to one of your slices that changes state in some perticular way.**
+
+store/index.js
+
+```
+const songsSlice = createSlice({
+	name: 'song',
+	initialState: [],
+	reducers: {
+		addSongs(state, action) {
+			state.push(action.payload);
+		}
+	}
+});
+```
+
+**Step 2: Export the action creator that the slice automatically creates**
+
+store/index.js
+
+```
+import { createStore, createSlice, configureStore } from '@reduxjs/toolkit';
+
+const songsSlice = createSlice({
+	name: 'song',
+	initialState: [],
+	reducers: {
+		**addSongs(state, action) {
+			state.push(action.payload);
+		}**
+	}
+});
+
+const store = configureStore({
+	reducer: {
+		songs: songsSlice.reducer
+	}
+});
+
+export { store }
+**export const { addSongs } = songsSlice.actions;**
+
+```
+
+**Step 3: Find the component that we want to dispatch from**
+
+**Step 4: Import the action creator function and `useDispatch` from react-redux**
+
+`SongsPlaylist.jsx`
+
+```
+import { useDispatch } from "react-redux";
+import { addSongs } from '../store';
+```
+
+**Step 5: Call `useDispatch` hook to get access to the dispatch function**
+
+`components/SongPlaylist.js`
+
+```
+function SongPlaylist() {
+ 
+  const dispatch = useDispatch();
+.
+..
+...
+```
+
+Step 6: Whenever user does something, call the action creator to get the action then dispatch it.
+
+`components/SongPlaylist.js`
+
+```
+
+const handleSongAdd = (song) => {
+    dispatch(addSongs(song));
+  };
+
+```

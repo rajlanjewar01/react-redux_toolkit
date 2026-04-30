@@ -139,3 +139,25 @@ const handleSongAdd = (song) => {
   };
 
 ```
+
+
+Accessing a State:
+
+<img width="973" height="658" alt="image" src="https://github.com/user-attachments/assets/744f4004-4515-478e-aa29-484c7264c0ee" />
+
+Step 1:  Find the component that needs to access some state
+
+`SongPlaylists.js`
+
+Step 2: Import the useSelector hook from react-redux
+
+`import { useDispatch, useSelector } from "react-redux";`
+
+Step 3: call a hook, passing a selector function
+
+```
+function SongPlaylist() {
+  const songPlaylist = useSelector((state) => {
+    return state.songs;
+  });
+```

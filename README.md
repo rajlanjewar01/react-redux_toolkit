@@ -33,7 +33,6 @@ store.dispatch({
 
 const finalState = store.getState();
 console.log('song store => ', JSON.stringify(finalState));
-
 ```
 
 
@@ -101,7 +100,6 @@ const store = configureStore({
 
 export { store }
 **export const { addSongs } = songsSlice.actions;**
-
 ```
 
 **Step 3: Find the component that we want to dispatch from**
@@ -133,11 +131,9 @@ Step 6: Whenever user does something, call the action creator to get the action 
 `components/SongPlaylist.js`
 
 ```
-
 const handleSongAdd = (song) => {
     dispatch(addSongs(song));
   };
-
 ```
 
 
